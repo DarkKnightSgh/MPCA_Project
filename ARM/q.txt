@@ -1,0 +1,55 @@
+Date:13/01/23
+
+1)WAP TO ADD 5 NUMBERS AND THE 5 NUMBERS ARE PRESENT IN THE RESGISTERS
+
+2)WAP TO ADD TWO NUMBERS PRESENT IN MEMEORY(p2)
+.data segment to define data,
+.word is a keyword
+ldr : load register,loads num1 into r0,also used to load into register using []
+swi:to halt the processor
+str:store content from register into the memory
+
+3)WAP TO CREATE A LOOP EQUVIVALENT ARM CODE(p4),SUM OF NUMBERS IN THE MEMORY
+cmp:compare
+bne:not equal to
+r1=6
+r1=6-1=5
+r1==0?(check)
+5!=0(therefore bne)
+add r0,r0,#4,incrementing word
+(p5):just remove add r0,r0,#4, and put #4 in prev ldr instruction
+
+4)WAP TO FIND SUM OF EVEN NUMBERS IN AN ARRAY OF GIVEN NUMBERS(p6)
+it is a decrementing loop,r1 contains no. of digits
+here we find if a even number,we add it with 1 and conclude that its even and add them
+using beq 
+halt label used here ,it goes to that thingy after process is complete
+
+put : add r6,r6,r2,in odd part to find sum of both odd and even 
+
+Note:-
+->Program works without .text and .data also,we just write it for our convenience
+->we can interchange the whole chunk
+
+5)WAP TO COPY THE CONTENTS OF ONE MEMORY LOCATION TO ANOTHER MEMORY LOCATION
+(load and store)[overwriting may occur]
+-------------------------------------------------------------------------------------------------------
+.text
+ldr r0, = arr
+mov r1, #10
+mov r2, #
+mov r3, #5
+startLabel:
+add r4, r2, r3 ;mid = l + r
+mov r7, r4, lsr #1; mid /= 2
+add r8, r0, r7, lsl #2
+ldr r5, [r8]
+cmp r5, r1
+subgt r7, r7, #1
+addlt r7, r7, #1
+mov r3, r7;if r5 is greater then r = mid - 1
+cmp r5, r1
+bne startLabel
+
+.data
+arr: .word 10,20,30,40,50,60

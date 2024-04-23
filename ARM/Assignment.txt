@@ -1,0 +1,4 @@
+q1)Write a program in ARM7TDMI-ISA to search for an element in an array.Display appropriate message on the standard output service,for success search display as "element found" and for unsuccessful search display as "element not found".Use binary search.
+q2)Write a program in ARM7TDMI-ISA to find substring in a given substring
+ex1.mainstring:intoduction to microprocessor
+substring:microprocessor expected output:"String present"
